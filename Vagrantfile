@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
     (1..2).each do |i|
-        config.vm.define "debian#{i}" do |debian|
+        config.vm.define "debian_#{i}" do |debian|
             debian.vm.box = "debian/jessie64"
             debian.vm.network "public_network", bridge: "enp8s0", ip: "192.168.0.12#{i}"
         end
@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     end
   
     (1..2).each do |i|
-        config.vm.define "centos#{i}" do |centos|
+        config.vm.define "centos_#{i}" do |centos|
             centos.vm.box = "centos/7"
             centos.vm.network "public_network", bridge: "enp8s0", ip: "192.168.0.12#{i+2}"
         end
