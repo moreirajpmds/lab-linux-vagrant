@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
             debian.vm.network "public_network", bridge: "enp8s0", ip: "192.168.0.12#{i}"
         end
 
-        config.vm.provider "virtualbox" do |fenix|
+        config.vm.provider "virtualbox" do |debian|
             debian.memory = "1024"
             debian.cpus = "2"
         end
